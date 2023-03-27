@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './Header.css';
+import ContactForm from './ContactForm';
 
 const Header = () => {
+    const [showContactForm, setShowContactForm] = useState(false);
+
+    const handleContactButtonClick = () => {
+        setShowContactForm(true);
+    };
+
+    const handleCloseButtonClick = () => {
+        setShowContactForm(false);
+    };
+
     return (
         <header>
             <div className="header-left">
@@ -17,7 +28,8 @@ const Header = () => {
                 <a href="https://github.com/strongside-87" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
-                <button onClick={() => console.log('Contact form triggered')}>Contact me</button>
+                <button onClick={handleContactButtonClick}>Contact me</button>
+                {showContactForm && <ContactForm onClose={handleCloseButtonClick} />}
             </div>
         </header>
     );

@@ -1,35 +1,28 @@
 import React from 'react';
-import Header from './components/Header';
-/*
-import AboutPage from './AboutPage';
-import WorkPage from './WorkPage';
-import BlogPage from './BlogPage';
-import ContactForm from './ContactForm';
- */
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const App = () => {
+import Navbar from './components/Header';
+import Home from './components/Home';
+import About from './components/About';
+import Work from './components/Work';
+import Contact from './components/ContactForm';
+import NotFound from './components/NotFound';
+import Footer from './components/Footer';
+
+function App() {
   return (
-      <Router>
-        <div>
-          <Header />
-          <Switch>
-            <Route path="/about">
-              <AboutPage />
-            </Route>
-            <Route path="/work">
-              <WorkPage />
-            </Route>
-            <Route path="/blog">
-              <BlogPage />
-            </Route>
-            <Route path="/">
-              <ContactForm />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/Work" element={<Work />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
   );
-};
+}
 
 export default App;
