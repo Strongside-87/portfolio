@@ -4,11 +4,16 @@ footer {
     align-items: center;
     padding: 20px;
     background-color: #F2F2F2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-left, .footer-right {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    flex: 1;
 }
 
 .footer-left {
@@ -53,4 +58,12 @@ hr {
 
 .footer-bottom-right a:hover {
     color: #1DA1F2;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    color: #666;
 }

@@ -1,26 +1,31 @@
 import React from 'react';
 import './Home.css';
+import { FaJs } from 'react-icons/fa';
+
 
 function Home() {
     return (
         <div className="home">
-            <div className="fade-in">
-                <h1>Hello, I'm Thomas Arildtoft</h1>
-                <p>I'm a Software Engineer who has unending enthusiasm for solving problems.</p>
+            <h1> Hello, I'm </h1>
+                <div className="typing">
+                    <p>Thomas Arildtoft</p>
+            </div>
+            <div className="under-title">
+                <p>I'm a Software Engineering student who has unending enthusiasm for solving problems.</p>
+            </div>
+            <div className="tab">
+                <FaJs />
+                <span>readme.js ●</span>
             </div>
             <div className="box">
-                <div className="tab">
-                    <img src="javascript-logo.png" alt="JavaScript Logo" />
-                    <span>read.me *</span>
-                </div>
                 <div className="content">
           <pre>
             <code>
-{`1. Im Ugi Stelmokaitis, a software engineer and entrepreneur based in Sydney, Australia.
+{`1. Im Thomas Arildtoft, a software engineer student from Denmarks Technical University (DTU) based in Roskilde, Denmark.
 
-2. I’m currently working at Priffle: The digital agency that harness the power of brands.  At Priffle we work with start-ups as well as established brands, crafting phenomenal digital products to help bring brands stand out in the crowd.
+2. I’m currently working at EPOS: EPOS delivers high-end audio solutions designed for Enterprise and Gaming. I work as Junior DevOps Engineer, where I help to maintain and improve the CI/CD pipeline and the infrastructure.
 
-3. During my "spare" time, Im also working on Aezthetics app. This new fitness app helps you to reach your goals and stay on track with a sleek interface. It has everything from workout plans, food diary tools or even fasting tracker so there is no need for multiple apps anymore.`}
+3. During my "spare" time, Im also working on a portfolio manager web application. This new portfolio manager is a web application that will help me to keep track of my investments and my portfolio in both stocks, crypto and estate.`}
             </code>
           </pre>
                 </div>

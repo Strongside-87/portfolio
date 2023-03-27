@@ -8,18 +8,20 @@ const Footer = () => {
 
     return (
         <footer>
+            <div className="footer-links">
             <div className="footer-left">
                 <Link to="/about">About</Link>
                 <Link to="/work">Work</Link>
-                <Link to="/blog">Blog</Link>
                 <Link to="/contact">Contact</Link>
             </div>
+
             <div className="footer-right">
-                <a href="https://github.com"><FaGithub /></a>
-                <a href="https://twitter.com"><FaTwitter /></a>
-                <a href="https://youtube.com"><FaYoutube /></a>
-                <a href="https://instagram.com"><FaInstagram /></a>
+                <a href="https://github.com/Strongside-87"><FaGithub /></a>
+                <a href="https://twitter.com/TArildtoft"><FaTwitter /></a>
+                <a href="https://www.youtube.com/channel/UCb--2H87xbqZ0AtT5UNSC_g"><FaYoutube /></a>
+                <a href="https://instagram.com/thomasarildtoft"><FaInstagram /></a>
             </div>
+        </div>
             <hr />
             <div className="footer-bottom">
                 <div className="footer-bottom-left">
