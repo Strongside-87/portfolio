@@ -1,13 +1,15 @@
-import React from 'react';
 import './Home.css';
 import { FaJs } from 'react-icons/fa';
+import Experience from './Experience';
+import Toolbox from './Toolbox';
+
 
 
 function Home() {
     return (
         <div className="home">
             <h1> Hello, I'm </h1>
-                <div className="typing">
+<div className="typing">
                     <p>Thomas Arildtoft</p>
             </div>
             <div className="under-title">
@@ -29,7 +31,12 @@ function Home() {
             </code>
           </pre>
                 </div>
+
             </div>
+
+            <Experience />
+
+            <Toolbox />
         </div>
     );
 }

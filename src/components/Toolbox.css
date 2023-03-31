@@ -1,0 +1,11 @@
+.title{
+    margin-bottom: 200px;
+    width: 40%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.title h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+}

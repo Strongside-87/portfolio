@@ -1,71 +1,69 @@
-import React, { useState } from "react";
+import React from "react";
+import { Form, Input, TextArea, Button } from "semantic-ui-react";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 import "./ContactForm.css";
 
-const ContactForm = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+const SERVICE_ID = "service_u0mcwlv";
+const TEMPLATE_ID = "template_cbzivon";
+const USER_ID = "****************";
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const data = { name, email, message };
-        // TODO: Implement code to send data to personal email
-        console.log(data);
-    };
+export default function ContactForm() {
+     const handleOnSubmit = (e) => {
+            e.preventDefault();
+            emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
+                .then((result) => {
+                    console.log(result.text);
+                    Swal.fire({
+                        icon: "success",
+                    title: "Message Sent Successfully"
+                })
+                }, (error) => {
+                    console.log(error.text);
+                    Swal.fire({
+                        icon: "error",
+                    title: "Ooops, something went wrong",
+                    text: error.text,
+                })
+                });
+            e.target.reset()
+        };
 
     return (
-        <div className="contact-form-container">
-            <div className="about-me-container">
-                <div className="about-me-text">
-                    <h3>About Me</h3>
-                    <p>
-                        Interactive Front-end developer. I'm Riccardo Zanutta, a 22-year-old
-                        Italian Freelance Front-end developer. I'm a weird guy who likes
-                        making weird things with web technologies. I like to resolve design
-                        problems, create smart user interface and imagine useful
-                        interaction, developing rich web experiences & web applications.
-                        When not working or futzing around with code, I study how to escape
-                        from University. Actually for hire.
-                    </p>
-                </div>
-            </div>
-            <div className="contact-form">
-                <h3>Let’s talk.</h3>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-row">
-                        <label htmlFor="name">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="form-row">
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="form-row">
-                        <label htmlFor="message">Message:</label>
-                        <textarea
-                            id="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            required
-                        ></textarea>
-                    </div>
-                    <button type="submit">Send message</button>
-                </form>
-            </div>
+        <div className="Contact">
+            <Form onSubmit={handleOnSubmit}>
+                <Form.Field
+                    id='form-input-control-email'
+                    control={Input}
+                    label='Email'
+                    name='user_email'
+                    placeholder='Email…'
+                    required
+                    icon='mail'
+                    iconPosition='left'
+                />
+                <Form.Field
+                    id='form-input-control-last-name'
+                    control={Input}
+                    label='Name'
+                    name='user_name'
+                    placeholder='Name…'
+                    required
+                    icon='user circle'
+                    iconPosition='left'
+                />
+                <Form.Field
+                    id='form-textarea-control-opinion'
+                    control={TextArea}
+                    label='Message'
+                    name='user_message'
+                    placeholder='Message…'
+                    required
+                />
+                <Button type='submit' color='green'>Submit</Button>
+            </Form>
         </div>
-    );
+    )
 };
 
-export default ContactForm;
+

@@ -1,17 +1,8 @@
-import React, { useState } from 'react';
 import './Header.css';
-import ContactForm from './ContactForm';
+import {FaCalendar} from 'react-icons/fa';
+import React from "react";
 
 const Header = () => {
-    const [showContactForm, setShowContactForm] = useState(false);
-
-    const handleContactButtonClick = () => {
-        setShowContactForm(true);
-    };
-
-    const handleCloseButtonClick = () => {
-        setShowContactForm(false);
-    };
 
     return (
         <header>
@@ -23,8 +14,8 @@ const Header = () => {
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/work">Work</a>
-                <button onClick={handleContactButtonClick}>Contact me</button>
-                {showContactForm && <ContactForm onClose={handleCloseButtonClick} />}
+                <hr />
+                <a href="https://github.com/Strongside-87"><FaCalendar /></a>
             </div>
         </header>
     );

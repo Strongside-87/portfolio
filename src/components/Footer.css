@@ -2,22 +2,16 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-color: #F2F2F2;
-    position: fixed;
     bottom: 0;
-    width: 100%;
 }
 
-.footer-left, .footer-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex: 1;
+.footer-links{
+    width: 90% !important;
+    margin-bottom: 20px;
 }
 
-.footer-left {
-    margin-bottom: 10px;
+svg{
+    font-size: 20px !important;
 }
 
 .footer-left a, .footer-right a {
@@ -27,13 +21,32 @@ footer {
     text-decoration: none;
 }
 
-.footer-right a:hover {
-    color: #1DA1F2;
+.footer-right:hover .fa-github{
+    color: #000000;
+}
+
+.footer-right a:nth-child(2):hover > svg.fa-linkedin{
+    color: #006599;
+}
+
+.footer-right a:hover svg.fa-youtube {
+    color: #FF0100;
+}
+
+.footer-right:hover svg.fa-twitter {
+    color: #1D9BEF;
+}
+
+.footer-right:hover svg.fa-instagram {
+    background: linear-gradient(135deg, #E1306C, #FD1D1D, #FEE440, #30A9DE);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 hr {
-    width: 100%;
-    margin: 20px 0;
+    width: 90%;
+    margin: 20px;
     border: none;
     border-top: 1px solid #DDD;
 }
@@ -41,8 +54,10 @@ hr {
 .footer-bottom {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
     font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: #666;
 }
 
