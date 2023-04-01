@@ -21,27 +21,24 @@ svg{
     text-decoration: none;
 }
 
-.footer-right:hover .fa-github{
+.footer-right a:nth-child(1):hover{
     color: #000000;
 }
 
-.footer-right a:nth-child(2):hover > svg.fa-linkedin{
+.footer-right a:nth-child(2):hover{
     color: #006599;
 }
 
-.footer-right a:hover svg.fa-youtube {
+.footer-right a:nth-child(4):hover {
     color: #FF0100;
 }
 
-.footer-right:hover svg.fa-twitter {
+.footer-right a:nth-child(3):hover {
     color: #1D9BEF;
 }
 
-.footer-right:hover svg.fa-instagram {
-    background: linear-gradient(135deg, #E1306C, #FD1D1D, #FEE440, #30A9DE);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.footer-right a:nth-child(5):hover {
+    color: #E1306C;
 }
 
 hr {

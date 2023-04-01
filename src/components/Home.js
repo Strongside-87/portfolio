@@ -2,6 +2,7 @@ import './Home.css';
 import { FaJs } from 'react-icons/fa';
 import Experience from './Experience';
 import Toolbox from './Toolbox';
+import Work from './Work';
 
 
 
@@ -37,6 +38,8 @@ function Home() {
             <Experience />
 
             <Toolbox />
+            
+            <Work />
         </div>
     );
 }

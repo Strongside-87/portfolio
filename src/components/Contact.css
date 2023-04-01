@@ -1,0 +1,14 @@
+.ContactAndProfileContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.ContactForm {
+    width: 50%;
+    padding: 1rem;
+}
+
+.Profile {
+    width: 50%;
+    padding: 1rem;
+}

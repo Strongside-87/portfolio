@@ -1,6 +1,7 @@
 import './Header.css';
-import {FaCalendar} from 'react-icons/fa';
 import React from "react";
+import Popup from "reactjs-popup";
+import ContactForm from "./Contact";
 
 const Header = () => {
 
@@ -14,8 +15,21 @@ const Header = () => {
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/work">Work</a>
-                <hr />
-                <a href="https://github.com/Strongside-87"><FaCalendar /></a>
+                <Popup trigger={<button>Contact me</button>}
+                       modal
+                       nested
+                >
+                    {(close) => (
+                        <div className="modal">
+                            <button className="close" onClick={close}>
+                                &times;
+                            </button>
+                            <div className="content">
+                                <ContactForm onClose={close} />
+                            </div>
+                        </div>
+                    )}
+                </Popup>
             </div>
         </header>
     );

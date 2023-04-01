@@ -1,8 +1,6 @@
 import React from 'react';
 import { FaGithub, FaTwitter, FaYoutube, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Popup from 'reactjs-popup';
-import ContactForm from './ContactForm';
 import './Footer.css';
 
 const Footer = () => {
@@ -14,22 +12,8 @@ const Footer = () => {
             <div className="footer-left">
                 <Link to="/about">About</Link>
                 <Link to="/work">Work</Link>
-                <Popup
-                    trigger={<button>Contact me</button>}
-                    modal
-                    nested
-                >
-                    {(close) => (
-                        <div className="modal">
-                            <button className="close" onClick={close}>
-                                &times;
-                            </button>
-                            <div className="content">
-                                <ContactForm onClose={close} />
-                            </div>
-                        </div>
-                    )}
-                </Popup>
+                <a href="https://github.com/Strongside-87">Setup</a>
+                <a href="https://github.com/Strongside-87">Blog</a>
             </div>
 
             <div className="footer-right">
